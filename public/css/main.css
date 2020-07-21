@@ -1,0 +1,13 @@
+:root{
+    --mainBgColor: firebrick;
+}
+
+*,html{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--mainBgColor);
+    color: #fff;
+}

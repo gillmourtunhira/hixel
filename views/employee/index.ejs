@@ -1,0 +1,11 @@
+<%- include('./../partials/header.ejs') %>
+
+<h1><%= data %> </h1>
+
+<ul>
+    <% users.forEach(element => { %>
+    <li><%= element %> </li>
+    <% }) %>
+</ul>
+
+<%- include('./../partials/footer.ejs') %>
