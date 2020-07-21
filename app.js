@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+// import employee model
+const Employee = require('./models/employee');
 
 // Setup mongoose connection
 const mongoose = require('mongoose');
@@ -11,9 +13,6 @@ mongoose.connect(mongoDB, {
     })
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err));
-
-// import employee model
-const Employee = require('./models/employee');
 
 // User
 const indexRouter = require('./routes/index');
@@ -28,6 +27,26 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
+
+// mongoose and mongo sandbox routes
+app.get('/add-employee', (req, res) => {
+    const employee = new Employee({
+        employeeId: 200209,
+        name: {
+            firstName: 'Gillmour',
+            lastName: 'Tunhira'
+        },
+        department: 'Forensic Science',
+        role: 'admin',
+        email: 'gillmour@hit.ac.zw',
+        mobile: 775534577
+    });
+    employee.save()
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((err) => console.log(err));
+});
 
 // Index Routes
 app.use('/', indexRouter);

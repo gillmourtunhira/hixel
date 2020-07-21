@@ -1,7 +1,5 @@
 const express = require('express');
 
-const Employee = require('./models/employee');
-
 // Middleware
 const router = express.Router();
 
