@@ -1,9 +1,6 @@
 # hixel - HRMS Web-Application
 
-<img alt="NodeJS" src="https://img.shields.io/badge/nodejs-v12.8.2LTS-success">
-<img alt="ExpressJS" src="https://img.shields.io/badge/expressjs-v4.17.1-blueviolet">
-<img alt="Completition" src="https://img.shields.io/badge/completition-75%25-orange">
-<img alt="NPM" src="https://img.shields.io/npm/l/express">
+<img alt="Completition" src="https://img.shields.io/badge/completition-75%25-orange"> <img alt="NodeJS" src="https://img.shields.io/badge/nodejs-v12.8.2LTS-success"> <img alt="ExpressJS" src="https://img.shields.io/badge/expressjs-v4.17.1-blueviolet"> <img alt="NPM" src="https://img.shields.io/npm/l/express">
 
 ## Table of Contents
 * [General info](#general-info)
