@@ -1,4 +1,4 @@
-# hixel - HRMS Web-Application
+# hixel - HRMS Web-Application 🇿🇼
 
 <img alt="Completition" src="https://img.shields.io/badge/completition-75%25-orange"> <img alt="NodeJS" src="https://img.shields.io/badge/nodejs-v12.8.2LTS-success"> <img alt="ExpressJS" src="https://img.shields.io/badge/expressjs-v4.17.1-blueviolet"> <img alt="NPM" src="https://img.shields.io/npm/l/express">
 
@@ -15,7 +15,7 @@ An extensive human resources system for Harare Institute of Technology, part of 
 * HTML / CSS / JS
 
 ## Setup
-To run this project, clone it first to your local environment and run npm:
+To run this project, clone it first to your local environment:
 
 ```
 $ cd <local dir>
@@ -27,14 +27,12 @@ $ cd <helix>
 `npm install`
 
 #### To start the server for the app enter the following command(s)
-```
-npm start
+`npm start`
 
-```
 #### Server will will be started on port 3000
 Navigate to localhost on port 3000 on your browser: `http//localhost:3000`
 
-#### Some routes to navigate the app:
+#### Some routes to navigate the app (you can use navigation in dashboard):
 ```
 /admin for admin login
 /admin/dashboard for admin backend, need to have logged in first
@@ -42,4 +40,4 @@ Navigate to localhost on port 3000 on your browser: `http//localhost:3000`
 ```
 
 ## License
-#### M.I.T
+#### This project is licensed under the terms of the MIT license.
