@@ -1,12 +1,6 @@
 # hixel - HRMS Web-Application
 
-[I'm an inline-style link](https://img.shields.io/badge/nodejs-v12.8.2LTS-success)
-
-[I'm an inline-style link](https://img.shields.io/badge/expressjs-v4.17.1-blueviolet)
-
-[I'm an inline-style link](https://img.shields.io/badge/completition-75%25-orange)
-
-[I'm an inline-style link](https://img.shields.io/npm/l/express)
+<img alt="NPM" src="https://img.shields.io/npm/l/express">
 
 ## Table of Contents
 * [General info](#general-info)
