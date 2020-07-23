@@ -15,6 +15,10 @@ let leaveSchema = new Schema({
         pending: Boolean,
         approved: Boolean,
         rejected: Boolean
+    },
+    employee: {
+        type: Schema.Types.ObjectId,
+        ref: 'Employee'
     }
 }, {
     timestamps: true

@@ -31,15 +31,15 @@ app.use(morgan('dev'));
 // mongoose and mongo sandbox routes
 app.get('/add-employee', (req, res) => {
     const employee = new Employee({
-        employeeId: 200209,
+        employeeId: 200210,
         name: {
-            firstName: 'Gillmour',
+            firstName: 'Victoria',
             lastName: 'Tunhira'
         },
-        department: 'Forensic Science',
-        role: 'admin',
-        email: 'gillmour@hit.ac.zw',
-        mobile: 775534577
+        department: 'Financial Science',
+        role: 'staff',
+        email: 'victoria@hit.ac.zw',
+        mobile: 775534576
     });
     employee.save()
         .then((result) => {

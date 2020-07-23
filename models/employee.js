@@ -28,6 +28,10 @@ let employeeSchema = new Schema({
     mobile: {
         type: Number
     },
+    payroll: {
+        type: Schema.Types.ObjectId,
+        ref: 'Payroll'
+    },
     accountCreated: {
         type: Date,
         default: Date.now

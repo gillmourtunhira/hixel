@@ -16,6 +16,10 @@ let payrollSchema = new Schema({
         totalDeductions: Number,
         totalOvertimePay: Number
     },
+    employee: {
+        type: Schema.Types.ObjectId,
+        ref: 'Employee'
+    },
     overtimeHours: Number,
     netPay: Number
 }, {

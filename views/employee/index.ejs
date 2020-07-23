@@ -2,10 +2,17 @@
 
 <h1><%= data %> </h1>
 
-<ul>
-    <% users.forEach(element => { %>
-    <li><%= element %> </li>
+<div class="employees__list">
+    <% if (employees.length > 0) { %>
+    <% employees.forEach(employee => { %>
+    <div class="employees__list--one">
+        <h3><%= employee.name.firstName %></h3>
+        <span><%= employee.employeeId  %> </span>
+    </div>
     <% }) %>
-</ul>
+    <% } else { %>
+    <p>The list is empty</p>
+    <% } %>
+</div>
 
 <%- include('./../partials/footer.ejs') %>
