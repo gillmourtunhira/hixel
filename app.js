@@ -17,6 +17,7 @@ mongoose.connect(mongoDB, {
 // User
 const indexRouter = require('./routes/index');
 const employeeRouter = require('./routes/employee');
+const hixelRouter = require('./routes/hixel');
 // Admin
 const adminRouter = require('./routes/admin');
 
@@ -48,16 +49,11 @@ app.get('/add-employee', (req, res) => {
         .catch((err) => console.log(err));
 });
 
-// Index Routes
+// Middleware
 app.use('/', indexRouter);
-app.use('/about', indexRouter);
-
-// Employee Routes
 app.use('/employee', employeeRouter);
-
-// Admin Routes
 app.use('/admin', adminRouter);
-app.use('/dashboard', adminRouter);
+app.use('/hixel', hixelRouter);
 
 app.use((req, res, next) => {
     res.status(404).render('404', {

@@ -4,13 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-    res.render('index',{
-        title: 'Hixel App',
-        data: 'Home'
-    });
+    res.redirect('/hixel');
 });
 
-router.get('/about', (req,res, next) =>{
+router.get('/about', (req, res, next) => {
     res.render('about', {
         title: 'About Us',
         data: 'About Us'
