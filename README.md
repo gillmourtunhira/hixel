@@ -30,7 +30,7 @@ $ cd <helix>
 `npm start`
 
 #### Server will will be started on port 3000
-Navigate to localhost on port 3000 on your browser: `http//localhost:3000`
+Navigate to localhost on port 3000 on your browser: `http://localhost:3000`
 
 #### Some routes to navigate the app (you can use navigation in dashboard):
 ```
