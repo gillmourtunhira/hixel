@@ -26,9 +26,4 @@ exports.employees = ((req, res, next) => {
             });
         })
         .catch((err) => console.log(err));
-    // res.render('./employee/index', {
-    //     title: 'Employees View',
-    //     data: 'Employees List',
-    //     employees
-    // });
 });

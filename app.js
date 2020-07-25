@@ -16,10 +16,7 @@ mongoose.connect(mongoDB, {
 
 // User
 const indexRouter = require('./routes/index');
-const employeeRouter = require('./routes/employee');
 const hixelRouter = require('./routes/hixel');
-// Admin
-const adminRouter = require('./routes/admin');
 
 const app = express();
 //const port = process.env.PORT || 4000;
@@ -51,8 +48,6 @@ app.get('/add-employee', (req, res) => {
 
 // Middleware
 app.use('/', indexRouter);
-app.use('/employee', employeeRouter);
-app.use('/admin', adminRouter);
 app.use('/hixel', hixelRouter);
 
 app.use((req, res, next) => {
@@ -61,9 +56,5 @@ app.use((req, res, next) => {
         data: 'Sorry mate, content not found'
     });
 });
-
-/*app.listen(port, ()=>{
-    console.log(`Listening on port: ${port}`);
-});*/
 
 module.exports = app;
