@@ -19,13 +19,17 @@ body {
     margin: 1em;
 }
 
+/* Form CSS (Mobile-first)*/
+.create__form {
+    max-width: 500px;
+}
 .form__actions {
     display: flex;
     flex-direction: column;
 }
 .form__wrapper {
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
 }
 .input__labels {
     display: flex;
@@ -33,7 +37,7 @@ body {
     margin-bottom: 5px;
 }
 label {
-    width: 25%;
+    width: 28%;
 }
 input {
     width: 70%;
