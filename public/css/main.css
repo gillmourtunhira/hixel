@@ -23,3 +23,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+.form__wrapper {
+    margin: 0 auto;
+    width: 500px;
+}
+.input__labels {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+}
+label {
+    width: 25%;
+}
+input {
+    width: 70%;
+}
