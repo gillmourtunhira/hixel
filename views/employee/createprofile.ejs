@@ -1,0 +1,59 @@
+<%- include('./../partials/header.ejs') %>
+
+<div class="form__container">
+    <form method="POST" class="form" action="create">
+        <div class="form__title"><%= data %></div>
+        <p class="form__desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, unde eveniet odio quod debitis fugit
+            quo
+            vel modi tenetur. Odio vitae sunt vero. Quibusdam explicabo beatae blanditiis nam cumque quidem?
+        </p>
+        <div class="form__item">
+            <label for="employeeId" class="form__label">Employee ID:</label>
+            <input type="number" name="employeeId" class="form__input" id="employeeid"
+                placeholder="Enter the Employee ID">
+            <span class="form__error">Id required</span>
+        </div>
+        <div class="form__item">
+            <label for="firstName" class="form__label">Firstname:</label>
+            <input type="text" name="firstName" class="form__input" id="firstname"
+                placeholder="Enter Employee Firstname">
+            <span class="form__error">Id required</span>
+        </div>
+        <div class="form__item">
+            <label for="lastName" class="form__label">Lastname:</label>
+            <input type="text" name="lastName" class="form__input" id="lastname" placeholder="Enter Employee Lastname">
+            <span class="form__error">Id required</span>
+        </div>
+        <div class="form__item">
+            <label for="department" class="form__label">Department:</label>
+            <input type="text" name="department" class="form__input" id="department"
+                placeholder="Enter Employee Department">
+        </div>
+        <div class="form__item">
+            <label for="role" class="form__label">Role:</label>
+            <input type="text" name="role" class="form__input" id="role" placeholder="staff or admin">
+        </div>
+        <div class="form__item">
+            <label for="email" class="form__label">Email:</label>
+            <input type="email" name="email" class="form__input" id="email" placeholder="Enter Employee Email">
+        </div>
+        <div class="form__item">
+            <label for="mobile" class="form__label">Mobile:</label>
+            <input type="number" name="mobile" class="form__input" id="mobile" placeholder="Enter Employee Mobile">
+        </div>
+        <div class="form__item">
+            <label for="joinedDate" class="form__label">Join Date:</label>
+            <input type="date" name="joinedDate" class="form__input" id="joineddate" placeholder="Joined Organisation">
+        </div>
+        <div class="form__item">
+            <label for="fullTime" class="form__label">Status:Fulltime:</label>
+            <input type="checkbox" name="fullTime" id="fullTime" value="true" checked>
+        </div>
+        <div class="form__item">
+            <button class="form__btn" type="submit">Create</button>
+        </div>
+    </form>
+</div>
+
+<%- include('./../partials/footer.ejs') %>

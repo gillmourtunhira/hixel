@@ -6,8 +6,8 @@ exports.profile = ((req, res, next) => {
 });
 
 exports.create = ((req, res, next) => {
-    res.render('./employee/create', {
+    res.render('./employee/createprofile', {
         title: 'Hixel | Create New Profile',
-        data: 'New Employee Profile'
+        data: 'Create Employee Profile'
     });
 });

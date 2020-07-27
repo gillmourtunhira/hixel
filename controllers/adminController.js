@@ -41,6 +41,7 @@ exports.create = ((req, res, next) => {
         role: req.body.role,
         email: req.body.email,
         mobile: req.body.mobile,
+        joinedDate: req.body.joinedDate,
         employmentStatus: {
             fullTime: req.body.fullTime
         }
