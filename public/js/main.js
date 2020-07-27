@@ -5,3 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav');
+
+    document.querySelector('#btnNav').addEventListener('click', () => {
+        nav.classList.add('nav--open');
+    });
+
+    document.querySelector('.nav__overlay').addEventListener('click', () => {
+        nav.classList.toggle('nav--open');
+    });
+});

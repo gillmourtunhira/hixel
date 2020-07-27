@@ -1,15 +1,62 @@
 <%- include('./../partials/header.ejs') %>
 
-<h1><%= data %> </h1>
-
 <div class="employees__list">
-    <% if (employees.length > 0) { %>
-    <% employees.forEach(employee => { %>
-    <div class="employees__list--one">
-        <a class="single__employee" href="/hixel/admin/employees/<%= employee._id %>/profile">
-            <h3><%= employee.name.firstName %></h3>
-            <span><%= employee.employeeId  %> </span>
-        </a>
+    <div class="employees__list--view">
+        <h1 class="row list__title"><%= data %> </h1>
+        <div class="row title__heading">
+            <div class="column">
+                <h3>Employee ID</h3>
+            </div>
+            <div class="column">
+                <h3>Firstname</h3>
+            </div>
+            <div class="column">
+                <h3>Lastname</h3>
+            </div>
+            <div class="column">
+                <h3>Department</h3>
+            </div>
+            <div class="column">
+                <h3>Email</h3>
+            </div>
+            <div class="column">
+                <h3>Role</h3>
+            </div>
+            <div class="column">
+                <h3>Joined</h3>
+            </div>
+            <div class="column">
+                <h3>Action</h3>
+            </div>
+        </div>
+        <% if (employees.length > 0) { %>
+        <% employees.forEach(employee => { %>
+        <div class="row">
+            <div class="column">
+                <h4><%= employee.employeeId  %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.name.firstName %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.name.lastName  %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.department  %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.email  %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.role  %></h4>
+            </div>
+            <div class="column">
+                <h4><%= employee.joinedDate  %></h4>
+            </div>
+            <div class="column">
+                <h4><a class="form__btn" href="/hixel/admin/employees/<%= employee._id %>/profile">View</a></h4>
+            </div>
+        </div>
     </div>
     <% }) %>
     <% } else { %>
