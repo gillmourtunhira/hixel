@@ -2,4 +2,17 @@
 
 <h1><%= data %> </h1>
 
+<div class="employee__profile">
+    <h3><%= details.name.firstName %> Profile</h3>
+    <ul>
+        <li><label for="employeeId">Employee ID:</label><%= details.employeeId %></li>
+        <li><label for="firstname">Firstname:</label><%= details.name.firstName %></li>
+        <li><label for="lastname">Surname:</label><%= details.name.lastName %></li>
+        <li><label for="email">Email:</label><%= details.email %></li>
+        <li><label for="mobile">Mobile:</label><%= details.mobile %></li>
+        <li><label for="status">Fulltime:</label><%= details.fulltime %></li>
+    </ul>
+    <a href="" class="delete">Delete</a>
+</div>
+
 <%- include('./../partials/footer.ejs') %>

@@ -27,3 +27,40 @@ exports.employees = ((req, res, next) => {
         })
         .catch((err) => console.log(err));
 });
+
+exports.create = ((req, res, next) => {
+    // console.log(req.body.employeeId);
+    // res.end();
+    const employee = new Employee({
+        employeeId: req.body.employeeId,
+        name: {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName
+        },
+        department: req.body.department,
+        role: req.body.role,
+        email: req.body.email,
+        mobile: req.body.mobile,
+        employmentStatus: {
+            fullTime: req.body.fullTime
+        }
+    });
+
+    employee.save()
+        .then((result) => {
+            res.redirect('/hixel/admin/employees');
+        })
+        .catch(err => console.log(err));
+});
+
+exports.profile = ((req, res, next) => {
+    const id = req.params.id;
+    Employee.findById(id)
+        .then((result) => {
+            res.render('./employee/profile', {
+                title: 'Employee Profile',
+                data: 'Employee Profile Details',
+                details: result
+            });
+        });
+});

@@ -19,6 +19,9 @@ router.get('/admin/employees', adminController.employees);
 router.get('/admin/dashboard', adminController.dashboard);
 router.get('/admin/leave', leaveController.leave);
 router.get('/admin/employees/create', employeeController.create);
+router.get('/admin/employees/:id/profile', adminController.profile);
+
+router.post('/admin/employees/create', adminController.create);
 
 // Employee Routes
 router.get('/employee/:id/profile', employeeController.profile);

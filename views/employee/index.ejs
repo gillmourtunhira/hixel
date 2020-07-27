@@ -6,8 +6,10 @@
     <% if (employees.length > 0) { %>
     <% employees.forEach(employee => { %>
     <div class="employees__list--one">
-        <h3><%= employee.name.firstName %></h3>
-        <span><%= employee.employeeId  %> </span>
+        <a class="single__employee" href="/hixel/admin/employees/<%= employee._id %>/profile">
+            <h3><%= employee.name.firstName %></h3>
+            <span><%= employee.employeeId  %> </span>
+        </a>
     </div>
     <% }) %>
     <% } else { %>
