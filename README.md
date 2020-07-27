@@ -42,4 +42,4 @@ Navigate to localhost on port 3000 on your browser: `http://localhost:3000`
 ## License
 #### This project is licensed under the terms of the MIT license.
 
-<a href="https://www.buymeacoffee.com/gillmourtunhira" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/gillmourtunhira" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
