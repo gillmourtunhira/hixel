@@ -284,3 +284,12 @@ a.form__btn {
     margin-top: 1em;
     padding: 0.5em;
 }
+
+/* End Employees Admin View */
+
+/* Login View */
+.login__wrapper {
+    background: red;
+}
+
+/* End Login View */

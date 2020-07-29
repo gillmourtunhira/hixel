@@ -1,6 +1,5 @@
 exports.home = ((req, res) => {
-    res.render('index', {
+    res.render('login', {
         title: 'Hixel | HRM Web-Application',
-        data: 'Welcome to Hixel HRM System'
     });
 });

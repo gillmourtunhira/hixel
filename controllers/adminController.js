@@ -1,6 +1,22 @@
 // import employee model
 const Employee = require('./../models/employee');
 
+exports.login = ((req, res, next) => {
+    Employee.findById('5f20b2148ce5a13cdc8626fd')
+        .then((result) => {
+            if (req.body.password === result.password) {
+                res.redirect('./admin/index');
+            } else if (req.body.password !== result.password) {
+                res.render('404', {
+                    title: '404 | Not found',
+                    data: 'Sorry mate, content not found'
+                });
+            }
+        })
+        .catch(err => console.log(err));
+    //res.redirect('/hixel/admin');
+});
+
 exports.index = ((req, res, next) => {
     res.render('./admin/index', {
         title: 'Hixel | Admin Console',
@@ -37,6 +53,8 @@ exports.create = ((req, res, next) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName
         },
+        username: req.sanitize(req.body.username),
+        password: req.sanitize(req.body.password),
         department: req.body.department,
         role: req.body.role,
         email: req.body.email,

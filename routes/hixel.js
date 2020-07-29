@@ -22,6 +22,8 @@ router.get('/admin/employees/create', employeeController.create);
 router.get('/admin/employees/:id/profile', adminController.profile);
 
 router.post('/admin/employees/create', adminController.create);
+router.post('/admin', adminController.login);
+
 
 // Employee Routes
 router.get('/employee/:id/profile', employeeController.profile);

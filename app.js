@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const expressSanitizer = require('express-sanitizer');
 // import employee model
 const Employee = require('./models/employee');
 
@@ -28,6 +29,12 @@ app.use(express.urlencoded({
 }));
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
+app.use(expressSanitizer());
+app.use(session({
+    secret: 'walnut',
+    resave: true,
+    saveUninitialized: false
+}));
 
 // mongoose and mongo sandbox routes
 app.get('/add-employee', (req, res) => {
