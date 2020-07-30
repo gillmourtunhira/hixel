@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const expressSanitizer = require('express-sanitizer');
+const session = require('express-session');
 // import employee model
 const Employee = require('./models/employee');
 

@@ -1,20 +1,28 @@
 // import employee model
 const Employee = require('./../models/employee');
+const bcrypt = require('bcrypt');
+const {
+    render
+} = require('../app');
 
 exports.login = ((req, res, next) => {
-    Employee.findById('5f20b2148ce5a13cdc8626fd')
+    const userPassword = req.body.password;
+    Employee.findById('5f20c2c87f260901d8922948')
         .then((result) => {
-            if (req.body.password === result.password) {
-                res.redirect('./admin/index');
-            } else if (req.body.password !== result.password) {
-                res.render('404', {
-                    title: '404 | Not found',
-                    data: 'Sorry mate, content not found'
-                });
-            }
+            const hash = result.password;
+            bcrypt.compare(userPassword, hash, function (err, response) {
+                //console.log(response);
+                if (err) {
+                    throw err;
+                } else if (!response) {
+                    console.log('Password dosent match!');
+                } else {
+                    console.log('Password matches!');
+                    res.redirect('/hixel/admin/');
+                }
+            });
         })
         .catch(err => console.log(err));
-    //res.redirect('/hixel/admin');
 });
 
 exports.index = ((req, res, next) => {

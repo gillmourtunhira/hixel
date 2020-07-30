@@ -110,4 +110,15 @@ body {
     text-decoration: none;
 }
 
+.login__error {
+    display: none;
+    visibility: hidden;
+}
+
+.login__failed {
+    display: block;
+    color: red;
+    visibility: visible;
+}
+
 /* End Login View */

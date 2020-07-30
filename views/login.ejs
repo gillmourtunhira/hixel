@@ -1,7 +1,7 @@
 <%- include('./partials/login_styles.ejs') %>
 
 <div class="login__wrapper">
-    <form class="login__form">
+    <form action="/hixel/admin" method="POST" class="login__form">
         <div class="login__form--logo-container">
             <img class="login__form--logo" src="/img/logo.png" alt="Logo">
         </div>
@@ -9,10 +9,10 @@
             <div class="login__form--header">
                 Login into your account
             </div>
-            <input class="login__form--input" type="text" name="acc_username" id="acc_username" placeholder="Username"
+            <input class="login__form--input" type="text" name="username" id="acc_username" placeholder="Username"
                 required>
-            <input class="login__form--input" type="password" name="acc_password" id="acc_password"
-                placeholder="Password" required>
+            <input class="login__form--input" type="password" name="password" id="acc_password" placeholder="Password"
+                required>
             <button class="login__form--button" type="submit">Login</button>
             <div class="login__form--links">
                 <a href="./" class="login__form--link">Forgot your password?</a>
