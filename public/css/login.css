@@ -116,9 +116,10 @@ body {
 }
 
 .login__failed {
-    display: block;
     color: red;
-    visibility: visible;
+    font-family: var(--mainFont);
+    font-weight: 400;
+    margin-top: 0;
 }
 
 /* End Login View */

@@ -7,7 +7,10 @@ const {
 
 exports.login = ((req, res, next) => {
     const userPassword = req.body.password;
-    Employee.findById('5f20c2c87f260901d8922948')
+    const userName = req.body.username;
+    Employee.findOne({
+            username: userName
+        })
         .then((result) => {
             const hash = result.password;
             bcrypt.compare(userPassword, hash, function (err, response) {
@@ -16,13 +19,23 @@ exports.login = ((req, res, next) => {
                     throw err;
                 } else if (!response) {
                     console.log('Password dosent match!');
+                    req.flash('info', 'Password dosent match!');
+                    res.redirect('/');
                 } else {
                     console.log('Password matches!');
-                    res.redirect('/hixel/admin/');
+                    req.session.user = result;
+                    res.redirect('./admin/dashboard');
                 }
             });
         })
         .catch(err => console.log(err));
+});
+
+exports.logout = ((req, res) => {
+    req.session.destroy(function () {
+        console.log('User logged out.');
+    });
+    res.redirect('/');
 });
 
 exports.index = ((req, res, next) => {
@@ -75,6 +88,7 @@ exports.create = ((req, res, next) => {
 
     employee.save()
         .then((result) => {
+            req.session.user = employee;
             res.redirect('/hixel/admin/employees');
         })
         .catch(err => console.log(err));

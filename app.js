@@ -1,10 +1,13 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const expressSanitizer = require('express-sanitizer');
 const session = require('express-session');
-// import employee model
-const Employee = require('./models/employee');
+const flash = require('connect-flash');
 
 // Setup mongoose connection
 const mongoose = require('mongoose');
@@ -21,7 +24,6 @@ const indexRouter = require('./routes/index');
 const hixelRouter = require('./routes/hixel');
 
 const app = express();
-//const port = process.env.PORT || 4000;
 
 // Middlewares
 app.use(express.static('public'));
@@ -32,32 +34,13 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(expressSanitizer());
 app.use(session({
-    secret: 'walnut',
-    resave: true,
+    secret: process.env.SESSION_SECRECT,
+    resave: false,
     saveUninitialized: false
 }));
+app.use(flash());
 
-// mongoose and mongo sandbox routes
-app.get('/add-employee', (req, res) => {
-    const employee = new Employee({
-        employeeId: 200210,
-        name: {
-            firstName: 'Victoria',
-            lastName: 'Tunhira'
-        },
-        department: 'Financial Science',
-        role: 'staff',
-        email: 'victoria@hit.ac.zw',
-        mobile: 775534576
-    });
-    employee.save()
-        .then((result) => {
-            res.send(result);
-        })
-        .catch((err) => console.log(err));
-});
-
-// Middleware
+// Set Routes
 app.use('/', indexRouter);
 app.use('/hixel', hixelRouter);
 
@@ -67,5 +50,6 @@ app.use((req, res, next) => {
         data: 'Sorry mate, content not found'
     });
 });
+
 
 module.exports = app;
