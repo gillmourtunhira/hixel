@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 
 // Setup mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb+srv://artisan:artisan2020@nodetuts-c3h20.mongodb.net/hixel?retryWrites=true&w=majority';
+const mongoDB = ''; // create a MongoDB Atlas Cluster, and add the link here
 mongoose.connect(mongoDB, {
         useNewUrlParser: true,
         useUnifiedTopology: true
